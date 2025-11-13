@@ -1,0 +1,20 @@
+{
+  "name": "gba-helpers",
+  "displayName": "GBA Helpers",
+  "description": "Adds functions to assist with GBA development with Butano",
+  "version": "0.1",
+  "author": {
+    "name": "Riley Young",
+    "email": "riley@rjmy.fun",
+    "url": "https://rjmy.fun"
+  },
+  "contributors": [],
+  "publisher": "RJMYGames",
+  "license": "CC0-1.0",
+  "categories": [ "Scripts" ],
+  "contributes": {
+    "scripts": [
+      { "path": "./gbahelpers.lua" }
+    ]
+  }
+}
