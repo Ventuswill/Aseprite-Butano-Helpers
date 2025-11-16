@@ -80,6 +80,14 @@ function init(plugin)
         group="gba",
         onclick = function()
             local dlg = Dialog { title = "Export to Butano" }
+            local fname = app.sprite.filename
+
+            --Unsaved files have no extension, so we need to make sure there's a match looking for a dot
+            if string.match(fname,".*%.") == nil then
+                fname = app.sprite.filename..".bmp"
+            else
+                fname = string.match(fname,".*%.").."bmp"
+            end
 
             dlg:combobox{
                 id="exportType",
@@ -91,7 +99,7 @@ function init(plugin)
                 id="exportLoc",
                 label="Export Location:",
                 --Setting extension to .bmp no matter the original extension
-                filename = string.match(app.sprite.filename,".*%.").."bmp",
+                filename = fname,
                 open=false,
                 save=true,
                 basepath = plugin.preferences.default,
